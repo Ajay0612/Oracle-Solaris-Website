@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SRTF Scheduling Algorithm</title>
+    <style>
+      table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SRTF Scheduling Algorithm</h1>
+    <table>
+      <thead>
+        <tr>
+          <th>Process</th>
+          <th>Arrival Time</th>
+          <th>Burst Time</th>
+        </tr>
+      </thead>
+      <tbody id="inputTable"></tbody>
+    </table>
+    <br>
+    <button onclick="addRow()">Add Row</button>
+    <button onclick="deleteRow()">Delete Row</button>
+    <br><br>
+    <button onclick="calculate()">Calculate</button>
+    <br><br>
+    <table>
+      <thead>
+        <tr>
+          <th>Process</th>
+          <th>Arrival Time</th>
+          <th>Burst Time</th>
+          <th>Completion Time</th>
+          <th>Turnaround Time</th>
+          <th>Waiting Time</th>
+        </tr>
+      </thead>
+      <tbody id="outputTable"></tbody>
+    </table>
+    <br>
+    <div id="avgOutput"></div>
+    <script src="srtf.js"></script>
+  </body>
+</html>

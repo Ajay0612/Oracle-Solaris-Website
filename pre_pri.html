@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Preemptive Priority Simulator</title>
+    <link rel="stylesheet" href="pre_pri.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="pre_pri.js"></script>
+
+  </head>
+   <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html" style="color: black; opacity: 50%;" >Home <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <div class="container" style="padding-bottom: 10px;">
+      <h1>Preemptive Priority Simulator</h1>
+      <form>
+        <div class="form-group">
+          <label for="process-name">Process Name:</label>
+          <input type="text" id="process-name">
+        </div>
+        <div class="form-group">
+          <label for="arrival-time">Arrival Time:</label>
+          <input type="number" id="arrival-time" min="0">
+        </div>
+        <div class="form-group">
+          <label for="burst-time">Burst Time:</label>
+          <input type="number" id="burst-time" min="1">
+        </div>
+        <div class="form-group">
+          <label for="priority">Priority:</label>
+          <input type="number" id="priority" min="1">
+        </div>
+        <button type="button" onclick="addProcess()" style="border-radius: 5px;">Add Process</button>
+      </form>
+      <table>
+        <thead>
+          <tr>
+            <th>Process Name</th>
+            <th>Arrival Time</th>
+            <th>Burst Time</th>
+            <th>Priority</th>
+            <th>Completion Time</th>
+            <th>Turnaround Time</th>
+            <th>Waiting Time</th>
+          </tr>
+        </thead>
+        <tbody id="processes"></tbody>
+      </table>
+      <br>
+      <button type="button" onclick="calculate()" style="border-radius: 5px;">Calculate</button>
+    </div>
+    <script src="p.js"></script>
+  </body>
+</html>

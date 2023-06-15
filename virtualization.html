@@ -1,0 +1,82 @@
+<html>
+    <style>
+
+.information-card-whitespace {
+  padding: 100px 10% 0px 10%;
+}
+
+.information-card {
+  margin: 0px 0px 0px 0px;
+  padding: 50px 10% 50px 10%;
+}
+
+.crawl-text-padding {
+  padding: 0% 10% 0% 10%
+}
+/*not the same solution as the example tribute page but gets rid of the unnecessary padding for mobile*/
+@media (max-width: 767px) {
+  .information-card-whitespace {
+    padding: 0% 0% 0% 0%;
+  }
+  .crawl-text-padding {
+    padding: 0% 0% 0% 0%;
+  }
+}
+.center-text {
+  text-align: center;
+}
+.crawl-tribute {
+  background-color: black;
+  font-family: Monospace !important;
+}
+/*harvested from the screenshot*/
+.yellow-text {
+  color: rgb(244, 233, 79);
+}
+.white-text {
+  color: rgb(186, 189, 182);
+}
+/*with css reset revert to normal*/
+ul {
+	list-style: disc;
+  list-style-position: inside;
+}
+    </style>
+    <body>
+        <div class="container-fluid">
+            <div class="information-card-whitespace">
+              <div class="well-lg crawl-tribute information-card">
+                <div class="center-text">
+                  <h1 class="text-primary yellow-text">Virtualization Features</h1>
+                  <h3 class="text white-text"><em>The immutable file system feature that was first introduced in Oracle Solaris 11 11/11 (read-only root for nonglobal zones) has been significantly extended so that immutable zones are now much easier to adopt and use.
+
+                    Previously, to make certain configuration changes in immutable zones, you had to make the zone temporarily mutable. In Oracle Solaris 11.4, you can run in the Trusted Path Domain (TPD) while the zone is still immutable for other users.
+                </div>
+                <div class="text crawl-text-padding" >
+                <h3 class="yellow-text">Configure Immutable Zones by Running in the Trusted Path To run in the TPD, do one of the following:
+                </h3>
+                <ul class="white-text">
+                  <li>Add the user to the /etc/security/tpdusers file and set start/trusted_path to true on the console-login service.</li>
+                  <li>For remote RAD access to the Trusted Path, set method_context/trusted_path to true on the rad:remote service and add tpd=yes to the user_attr entry for each user that is allowed remote access to the TPD.</li>
+                </ul>
+                </div>
+                <div class="text crawl-text-padding" >
+                    <h3 class="yellow-text">Silicon Secured Memory Support in Oracle Solaris Kernel Zones</h3>
+                    <ul class="white-text">
+                      <li>Software in Silicon Support in Oracle Solaris kernel zones is enhanced to include Silicon Secured Memory (SSM). SSM adds real-time checking of access to data in memory to help protect against malicious intrusion and flawed program code in production for greater security and reliability.</li>
+                      <li>SSM protection is utilized by Oracle Database 12c by default, and is easy to turn on for other applications.</li>
+                    </ul>
+                </div>
+                <div class="text crawl-text-padding" >
+                        <h3 class="yellow-text">VLAN Aware Oracle Solaris Kernel Zones</h3>
+                        <ul class="white-text">
+                          <li>VLANs split a single Layer 2 (L2) network into multiple logical networks so that each logical network is its own broadcast domain. This feature means that all the devices connected to a VLAN can see the broadcast frame of every other device irrespective of its physical location.
+
+                          </li>
+                          <li>Previously, Oracle Solaris kernel zones were able to assert only one VLAN ID. In the Oracle Solaris 11.4 release, you are able to assert additional VLAN IDs per anet by specifying the new vlan resource type in a zone configuration.</li>
+                    
+                        </ul>
+                </div>
+                
+    </body>
+</html>

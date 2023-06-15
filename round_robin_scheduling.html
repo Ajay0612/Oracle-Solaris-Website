@@ -1,0 +1,179 @@
+<!DOCTYPE html><html><head><title>Round Robin Simulator</title> <!-- Load Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- Load custom CSS -->
+    <style>
+    body {
+      background-color: #f5f5f5;
+      font-size:18px;
+      font-family: Arial, sans-serif;
+      padding-top: 50px;
+    }
+    
+    h1 {
+        text-align: center;
+    }
+    
+    form {
+        margin-bottom: 50px;
+    }
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 50px;
+    }
+    
+    th,
+    td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    
+    button {
+        display: block;
+        margin: 0 auto;
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+    }
+    
+    button:hover {
+        background-color: #3e8e41;
+    }
+    
+    #resultDiv {
+        margin-top: 50px;
+    }
+    
+    #resultDiv table {
+        margin-bottom: 0;
+    }
+    
+    </style></head>
+    <body>
+        <nav class="navbar navbar-default navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">RR Simulator</a>
+                    </div></div>
+                    </nav>
+                    <div class="container"><h1>Round Robin Simulator</h1>
+                    <form>
+                        <div class="form-group">
+                            <label for="n">Enter the number of processes:</label>
+                            <input type="number" class="form-control" name="n" id="n">
+                            <label for="quantum">Enter time quantum:</label>
+                            <input type="number" class="form-control" name="quantum" id="quantum">
+
+                        </div>
+
+                            <button type="button" class="btn btn-primary" onclick="createTable()">Submit</button></form>
+                            <div id="tableDiv"></div>
+                            <button type="button" class="btn btn-primary" onclick="calculate()">Calculate</button>
+                            <div id="resultDiv"></div>
+                            </div>
+                            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script>
+        function createTable() {
+        // getting the value of n from the input field
+        var n=parseInt(document.getElementById("n").value);
+    
+        // creating the table header
+        var table="<table class='table'><thead><tr><th>Process</th><th>Arrival Time</th><th>Burst Time</th></tr></thead><tbody>";
+    
+        // creating the table rows with input fields for arrival time and burst time
+        for (var i=1; i <=n; i++) {
+            table+="<tr>";
+            table+="<td>P"+i+"</td>";
+            table+="<td><input type='number' name='arrival[]' class='form-control'></td>";
+            table+="<td><input type='number' name='burst[]' class='form-control'></td>";
+            table+="</tr>";
+        }
+    
+        // closing the table
+        table+="</tbody></table>";
+    
+        // adding the table to the div element
+        document.getElementById("tableDiv").innerHTML=table;
+    }
+    
+    function calculate() {
+  // getting the input fields and their values
+  var arrivalFields = document.getElementsByName("arrival[]");
+  var burstFields = document.getElementsByName("burst[]");
+  var quantumField = document.getElementById("quantum");
+  var n = arrivalFields.length;
+  var arrival = [];
+  var burst = [];
+
+  // storing the input field values in arrays
+  for (var i = 0; i < n; i++) {
+    arrival.push(parseInt(arrivalFields[i].value));
+    burst.push(parseInt(burstFields[i].value));
+  }
+
+  var quantum = parseInt(quantumField.value);
+
+  // implementation of Round Robin scheduling algorithm
+  var time = 0;
+  var remainingBurst = [...burst];
+  var waitingTime = new Array(n).fill(0);
+  var turnaroundTime = new Array(n).fill(0);
+
+  while (true) {
+    var done = true;
+
+    for (var i = 0; i < n; i++) {
+      if (remainingBurst[i] > 0) {
+        done = false;
+
+        if (remainingBurst[i] <= quantum) {
+          time += remainingBurst[i];
+          turnaroundTime[i] = time - arrival[i];
+          remainingBurst[i] = 0;
+        } else {
+          time += quantum;
+          remainingBurst[i] -= quantum;
+        }
+      }
+    }
+
+    if (done) break;
+  }
+
+  // calculating waiting time
+  for (var i = 0; i < n; i++) {
+    waitingTime[i] = turnaroundTime[i] - burst[i];
+  }
+
+  // creating the table header for the result table
+  var resultTable =
+    "<table class='table'><thead><tr><th>Process</th><th>Arrival Time</th><th>Burst Time</th><th>Waiting Time</th><th>Turnaround Time</th></tr></thead><tbody>";
+
+  for (var i = 0; i < n; i++) {
+    resultTable += "<tr>";
+    resultTable += "<td>P" + (i + 1) + "</td>";
+    resultTable += "<td>" + arrival[i] + "</td>";
+    resultTable += "<td>" + burst[i] + "</td>";
+    resultTable += "<td>" + waitingTime[i] + "</td>";
+    resultTable += "<td>" + turnaroundTime[i] + "</td>";
+    resultTable += "</tr>";
+  }
+
+  // closing the table
+  resultTable += "</tbody></table>";
+
+  // adding the table to the div element
+  document.getElementById("resultDiv").innerHTML = resultTable;
+}
+
+    </script></body></html>
+

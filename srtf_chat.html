@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- Load custom CSS -->
+
+    <link rel="stylesheet" href="srtf_chat.css">
+    <script src="srtf_chat.js"></script>
+    <script src="srtf_chat1.js"></script>
+    <title>SRTF Simulator</title>
+    <style>
+      /* Add box styles */
+      .box {
+        width: 60%;
+        margin: auto;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+          <div class="navbar-header">
+              <a class="navbar-brand" href="index.html">Home</a>
+              </div></div>
+              </nav>
+    <div class="box">
+      <h1 style="padding-top: 20px;">SRTF Simulator</h1>
+      <p>Enter the number of processes and their arrival and burst times, then click the button to <b>CALCULATE</b> the SRTF process scheduling algorithm:</p>
+      <form>
+        <label for="numProcesses">Number of Processes:</label>
+        <input type="number" id="numProcesses" min="1" required>
+        <button type="button" onclick="calculateSRTF()">Calculate </button>
+      </form>
+      <div id="outputDiv">
+        <div id="output"></div>
+        <div id="avgWT"></div>
+        <div id="avgTT"></div>
+      </div>
+    </div>
+    <script src="srtf.js"></script>
+  </body>
+</html>

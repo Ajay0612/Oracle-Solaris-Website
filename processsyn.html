@@ -1,0 +1,76 @@
+<html>
+    <style>
+
+.information-card-whitespace {
+  padding: 100px 10% 0px 10%;
+}
+
+.information-card {
+  margin: 0px 0px 0px 0px;
+  padding: 50px 10% 50px 10%;
+}
+
+.crawl-text-padding {
+  padding: 0% 10% 0% 10%
+}
+/*not the same solution as the example tribute page but gets rid of the unnecessary padding for mobile*/
+@media (max-width: 767px) {
+  .information-card-whitespace {
+    padding: 0% 0% 0% 0%;
+  }
+  .crawl-text-padding {
+    padding: 0% 0% 0% 0%;
+  }
+}
+.center-text {
+  text-align: center;
+}
+.crawl-tribute {
+  background-color: black;
+  font-family: Monospace !important;
+}
+/*harvested from the screenshot*/
+.yellow-text {
+  color: rgb(244, 233, 79);
+}
+.white-text {
+  color: rgb(186, 189, 182);
+}
+/*with css reset revert to normal*/
+ul {
+	list-style: disc;
+  list-style-position: inside;
+}
+    </style>
+    <body>
+        <div class="container-fluid">
+            <div class="information-card-whitespace">
+              <div class="well-lg crawl-tribute information-card">
+                <div class="center-text">
+                  <h1 class="text-primary yellow-text">Overview of Process Scheduling</h1>
+                  <h3 class="text white-text"><em>Oracle Solaris incorporates a powerful preemptive priority scheduling algorithm as a key feature of its process scheduling system. This advanced algorithm ensures the efficient execution of critical tasks based on their priority levels, enabling optimal resource allocation and maximizing system performance.</em></h3>
+                </div>
+                <div class="text crawl-text-padding" >
+                <h3 class="yellow-text">
+                  Key Features of Preemptive Priority Scheduling</h3>
+                </h3>
+                <ul class="white-text">
+                  <li>Timely Execution of Critical Tasks: Oracle Solaris employs preemptive priority scheduling to prioritize high-priority processes over lower-priority ones. This approach guarantees that critical tasks are promptly serviced, even if lower-priority processes are currently running, ensuring responsiveness and meeting crucial deadlines.
+                  
+                  </li>
+                  <br>
+                  <li>Dynamic Priority Adjustment: The preemptive priority scheduling algorithm in Oracle Solaris is designed to dynamically adjust process priorities based on their behavior and system load. This adaptability optimizes resource utilization and responsiveness, ensuring that processes receive the appropriate priorities at all times.</li>
+                  <br><li>Fairness and Resource Allocation: By utilizing preemptive priority scheduling, Oracle Solaris promotes fairness in resource allocation. Higher-priority processes are granted the necessary CPU time to execute, while lower-priority processes are temporarily preempted, ensuring equitable distribution of resources and preventing any single process from monopolizing system resources.
+
+                  </li>
+                  <br>
+                  <li>Multilevel Priority Queues: Oracle Solaris utilizes a multilevel priority queue structure to organize processes based on their priority levels. This hierarchical approach ensures efficient management of process priorities and facilitates quick access to high-priority tasks, further enhancing system performance.</li>
+                  <br><li>Preemptive Behavior: The preemptive priority scheduling algorithm in Oracle Solaris allows higher-priority processes to preempt lower-priority ones, ensuring that critical tasks can be executed without delay. This preemptive behavior guarantees that time-sensitive operations are handled promptly, enhancing overall system responsiveness.</li>
+                  <br><li>Oracle Solaris' preemptive priority scheduling feature is an essential component of its process scheduling system, providing efficient resource allocation, responsiveness, and prioritization of critical tasks. By incorporating this advanced algorithm, Oracle Solaris optimizes system performance and delivers an exceptional computing experience in a wide range of environments.</li>
+
+                  </li>
+                  
+                </ul>
+                
+    </body>
+</html>

@@ -1,0 +1,82 @@
+<html>
+    <style>
+
+.information-card-whitespace {
+  padding: 100px 10% 0px 10%;
+}
+
+.information-card {
+  margin: 0px 0px 0px 0px;
+  padding: 50px 10% 50px 10%;
+}
+
+.crawl-text-padding {
+  padding: 0% 10% 0% 10%
+}
+/*not the same solution as the example tribute page but gets rid of the unnecessary padding for mobile*/
+@media (max-width: 767px) {
+  .information-card-whitespace {
+    padding: 0% 0% 0% 0%;
+  }
+  .crawl-text-padding {
+    padding: 0% 0% 0% 0%;
+  }
+}
+.center-text {
+  text-align: center;
+}
+.crawl-tribute {
+  background-color: black;
+  font-family: Monospace !important;
+}
+/*harvested from the screenshot*/
+.yellow-text {
+  color: rgb(244, 233, 79);
+}
+.white-text {
+  color: rgb(186, 189, 182);
+}
+/*with css reset revert to normal*/
+ul {
+	list-style: disc;
+  list-style-position: inside;
+}
+    </style>
+    <body>
+        <div class="container-fluid">
+            <div class="information-card-whitespace">
+              <div class="well-lg crawl-tribute information-card">
+                <div class="center-text">
+                  <h1 class="text-primary yellow-text">Key Features in Oracle Solaris 11.4</h1>
+                  <h3 class="text white-text"><em>Oracle Solaris is a secure, fast platform engineered for large-scale enterprise deployments. Oracle Solaris provides simple update, compliance monitoring, performance monitoring, and zero overhead virtualization for isolating mission-critical workloads.
+                                      </em></h3>
+                </div>
+                <div class="text crawl-text-padding" >
+                <h3 class="yellow-text">Proven and automated security and compliance:
+                </h3>
+                <ul class="white-text">
+                  <li>Key Management Interoperability Protocol (KMIP) Oracle Solaris KMIP cryptography clients can communicate with remote KMIP servers, where the keys are created and managed in secure data-at-rest systems.                  </li>
+                  <li>Silicon Secured Memory (SSM)  Automatically protect your application and operating system with SSM.</li>
+                  <li>Modernize security audits with built-in, automated compliance reporting.</li>
+                  <li>Secure your application platform deployment with a new application sandbox management tool.</li>
+                  
+                </ul>
+                </div>
+                <div class="text crawl-text-padding" >
+                    <h3 class="yellow-text">Optimized:</h3>
+                    <ul class="white-text">
+                      <li>Fastest and most secure platform for running Oracle Database and Java.</li>
+                      <li>Maximize Oracle Database multitenant security and isolation</li>
+                    </ul>
+                </div>
+                <div class="text crawl-text-padding" >
+                        <h3 class="yellow-text">Simplicity:</h3>
+                        <ul class="white-text">
+                          <li>Seamlessly migrate traditional workloads to VMs.</li>
+                          <li>Use cloudbase-init to initially configure guest OS deployments.</li>
+                          <li>Use the Oracle Solaris System Web Interface Dashboard to view system data, performance, and compliance.</li>
+                        </ul>
+                </div>
+                
+    </body>
+</html>

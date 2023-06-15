@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "static"
+		},
+		{
+			"path": "static/css"
+		},
+		{
+			"path": "static/images"
+		},
+		{
+			"path": "static/js"
+		}
+	],
+	"settings": {}
+}

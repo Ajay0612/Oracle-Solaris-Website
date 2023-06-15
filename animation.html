@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Video Tags Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #333;
+      text-align: center;
+      margin-top: 0;
+    }
+    
+    .video-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    
+    .video {
+      width: 45%;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    .video h2 {
+      color: #333;
+      font-size: 20px;
+      margin-top: 0;
+    }
+    .navbar {
+    position: relative;
+}
+.navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 2rem 9%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: .3s;
+}
+
+.header.sticky {
+    background: var(--bg-color);
+}
+    
+    .video h3 {
+      color: #666;
+      font-size: 16px;
+      margin-bottom: 10px;
+    }
+    
+    .video p {
+      font-size: 14px;
+      margin-bottom: 0;
+    }
+    .navbar a {
+    font-size: 1.7rem;
+    color: var(--text-color);
+    font-weight: 500;
+    margin-left: 3.5rem;
+    transition: .3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--main-color);
+}
+  </style>
+</head>
+<body>
+  <header class="header">
+    <!-- <a href="#" class="logo">OS Project<span class="animate" style="--i:1;"></span></a> -->
+    <a href="index.html"><img src="/design-studio_one-page-template-master/Oracle_Solaris_logo.svg.png" class="logo"  width="130px" alt=""></a>
+
+    <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+
+    <nav class="navbar">
+
+        <!-- <a href="#skills">Skills</a> -->
+        <!-- <a href="#contact">Contact</a> -->
+
+        <span class="active-nav"></span>
+        <span class="animate" style="--i:2;"></span>
+    </nav>
+</header>
+<br><br><br><br><br><br>
+  <h1><u>Process Synchronization</u></h1>
+  
+  <div class="video-container">
+    <div class="video">
+      <h2>Critical Section: Players trying to move to same location</h2>
+      <video style="width:100%;max-height:100%" autoplay muted loop controls><source src="5V4XDMT7JDL21JJZ.mov" type="video/mp4">Your browser does not support the video tag.</video>
+     
+      <p>When this part of code is not handled properly. It leads to undesired situations.</p>
+      <p>Here, one of the players got frozen and the other player hits the ball.</p>
+    </div>
+    
+    <div class="video">
+      <h2>Race Condition: Two cars crossing the finish line at a time</h2>
+      <video style="width:100%;max-height:100%" autoplay muted loop controls><source src="5SY9XWEEO4K1Z3UE.mov" type="video/mp4">Your browser does not support the video tag.</video>
+      <p>When this part of code is not handled properly. It leads to undesired situations.</p>
+      <p>Here, one of the players got declared as winner as his data was sent to the server first and the other player is confused.</p>
+    </div>
+  </div>
+</body>
+</html>
